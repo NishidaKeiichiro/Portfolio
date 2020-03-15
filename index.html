@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nishida Keiichiro</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script type="text/javascript" src="jQuery-3.4.1.min.js"></script>
+    <script>
+      function effectscroll(){
+        var doch = $(document).innerHeight();
+        var winh = $(window).innerHeight();
+        var bottom = doch - winh - 10;
+        if($(window).scrollTop()>=$("#profile").offset().top || ($("#forsmmenubar").hasClass("active")&&$(window).scrollTop()>=($("#profile").offset().top-230))){
+          $("#menubar").css("background","pink");
+          $("#forsmmenubar").css("background","pink");
+          $("#profile .text").addClass("fadein");
+        }else{
+          $("#menubar").css("background","rgba(0,0,0,0)");
+          $("#forsmmenubar").css("background","rgba(0,0,0,0)");
+        }
+        if($(window).scrollTop()>=$("#skills").offset().top || ($("#forsmmenubar").hasClass("active")&&$(window).scrollTop()>=($("#skills").offset().top-230))){
+          $("#skills ul").addClass("fadein");
+        }
+        if($(window).scrollTop()>=$("#works").offset().top || ($("#forsmmenubar").hasClass("active")&&$(window).scrollTop()>=($("#works").offset().top-230)) || $(window).scrollTop()>=bottom){
+          $("#works .words").addClass("fadein");
+        }
+      }
+      $(function(){
+        effectscroll();
+
+        $("#menu-trigger").click(function(){
+          $(this).toggleClass("active");
+          $("#forsmmenubar").toggleClass("active");
+          effectscroll();
+        });
+        $(window).scroll(function(){
+          effectscroll();
+        });
+        $('a[href^="#"]').click(function(){
+          var speed = 300;
+          var href= $(this).attr("href");
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+          $("html, body").animate({scrollTop:position}, speed, "swing");
+          effectscroll();
+          return false;
+        });
+        $('a[href="no"]').click(function(){
+          return false;
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="menubar">
+      <div id="logo">Nishida</div>
+      <div id="menu-trigger-wrapper">
+        <a id="menu-trigger" href="no">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div>
+      <ul id="menu-wrapper">
+        <li><a class="top-link" href="#top">Top</a></li>
+        <li><a class="profile-link" href="#profile">Profile</a></li>
+        <li><a class="profile-link" href="#skills">Skills</a></li>
+        <li><a class="works-link" href="#works">Works</a></li>
+      </ul>
+    </div>
+    <div id="forsmmenubar">
+      <ul id="forsmmenu-wrapper">
+        <li><a class="top-link" href="#top">Top</a></li>
+        <li><a class="profile-link" href="#profile">Profile</a></li>
+        <li><a class="profile-link" href="#skills">Skills</a></li>
+        <li><a class="works-link" href="#works">Works</a></li>
+      </ul>
+    </div>
+    <div id="contents">
+      <div id="top">
+        <div id="contents-top">
+          <div id="toplogo"></div>
+        </div>
+      </div>
+      <div id="profile">
+        <p class="chaptitle"><span>Profile</span></p>
+        <div class="text">
+          <div id="logo-profile"></div>
+          <div class="words">
+            <p>京都の大学３回生です。</p>
+            <p>ITベンチャーで開発アルバイトしながら学習してます。</p>
+            <p>趣味はダイビング、旅行です。バックパッカー旅行がすきです。</p>
+            <p>FXもちまちまやってます。</p>
+          </div>
+        </div>
+      </div>
+      <div id="skills">
+        <p class="chaptitle"><span>Skills</span></p>
+        <ul>
+          <li>
+            <div class="square">
+              <div class="icon-zone"><i class="fab fa-html5"></i></div>
+              <div class="name-zone">HTML</div>
+              <div class="separatebar"></div>
+              <div class="description">ブラウザ用のマークアップ言語です。このページももちろんHTMLを用いて作成しています。Templateとか勉強したいです。<br>学習時期：2019/4~</div>
+            </div>
+          </li>
+          <li>
+            <div class="square">
+              <div class="icon-zone"><i class="fab fa-js"></i></div>
+              <div class="name-zone">jQuery</div>
+              <div class="separatebar"></div>
+              <div class="description">Webサイトに動きをつける言語です。この言語すき！多用させてもらってます。<br>学習時期：2019/7~</div>
+            </div>
+          </li>
+          <li>
+            <div class="square">
+              <div class="icon-zone"><i class="fab fa-php"></i></div>
+              <div class="name-zone">PHP</div>
+              <div class="separatebar"></div>
+              <div class="description">サーバーサイドの言語です。バイトではFuelPHPというフレームワークを用いてWebサイト扱ってます。<br>学習時期：2019/3~</div>
+            </div>
+          </li>
+          <li>
+            <div class="square">
+              <div class="icon-zone"><i class="fab fa-css3-alt"></i></div>
+              <div class="name-zone">CSS</div>
+              <div class="separatebar"></div>
+              <div class="description">Webページの色や動き、形等を司る言語です。CSS3の機能を使いこなせるようになりたいところ。<br>学習時期：2019/6~</div>
+            </div>
+          </li>
+          <li>
+            <div class="square">
+              <div class="icon-zone"><i class="fas fa-database"></i></div>
+              <div class="name-zone">SQL</div>
+              <div class="separatebar"></div>
+              <div class="description">SQLを用いてバイトの出退勤管理をしてます。<br>学習時期：2019/5~</div>
+            </div>
+          </li>
+          <li>
+            <div class="square">
+              <div class="icon-zone"><i class="fab fa-git"></i></div>
+              <div class="name-zone">Git</div>
+              <div class="separatebar"></div>
+              <div class="description">共同開発には欠かせません。最近までクローンとコミットとプッシュだけしか知りませんでした。<br>学習時期：2019/4~</div>
+            </div>
+          </li>
+          <li>
+            <div class="square">
+              <div class="icon-zone"><i class="fas fa-terminal"></i></div>
+              <div class="name-zone">Command Line</div>
+              <div class="separatebar"></div>
+              <div class="description">ほんとに必要最低限だけ。。扱えます。。<br>学習時期：2019/3~</div>
+            </div>
+          </li>
+          <li>
+            <div class="square">
+              <div class="icon-zone"><i class="fab fa-vuejs"></i></div>
+              <div class="name-zone">Vue.js</div>
+              <div class="separatebar"></div>
+              <div class="description">Webページのフロントのライブラリです。いまからお勉強しないとな言語です。<br>学習時期：2020/3~</div>
+            </div>
+          </li>
+          <li>
+            <div class="square">
+              <div class="icon-zone"><i class="fab fa-wordpress"></i></div>
+              <div class="name-zone">WordPress</div>
+              <div class="separatebar"></div>
+              <div class="description">PHP製のフレームワークです。高機能なWebページをかんたんに作成できます。一時期これを用いてサイトを運営してました。<br>学習時期：2019/10~2020/2</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div id="works">
+        <p class="chaptitle"><span>Works</span></p>
+        <div class="words">
+          <p>がんばります。。。</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

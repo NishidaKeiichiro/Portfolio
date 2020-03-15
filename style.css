@@ -1,0 +1,375 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Century Gothic"; 
+}
+#menubar{
+	position: fixed;
+	display: flex;
+	width: 100%;
+	height: 80px;
+	background: rgba(0,0,0,0);
+	overflow: hidden;
+	align-items: center;
+	justify-content: space-between;
+	transition: all 0.3s;
+	letter-spacing: 3px;
+	font-size: 23px;
+	z-index: 100;
+}
+#menubar #logo{
+	margin-left: 50px;
+	margin-right: 10px;
+}
+#forsmmenubar{
+	display: block;
+	position: fixed;
+	margin-top: 80px;
+	width: 100%;
+	height: 210px;
+	background: rgba(0,0,0,0);
+	transition: all 0.3s;
+	letter-spacing: 3px;
+	font-size: 23px;
+	z-index: 100;
+	transform: scale(0,1);
+	transform-origin: right top;
+	left: 0;
+}
+#forsmmenu-wrapper li{
+	position: relative;
+	display: block;
+	border-top: solid 2px #fff;
+	height: 50px;
+	line-height: 50px;
+	padding-left: 50px;
+}
+#forsmmenu-wrapper li:nth-of-type(4){
+	border-bottom: solid 2px #fff;
+}
+#forsmmenu-wrapper a{
+	color: #fff;
+	display: block;
+	text-decoration: none;
+}
+#top{
+	width: 100%;
+	height: 800px;
+	background-image: url("./images/top.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#top #contents-top{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.2);
+	position: relative;
+}
+#contents-top #toplogo{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 60%;
+	height: 250px;
+	border: solid 3px black;
+	border-radius: 10px;
+	background-image: url("./images/toplogo.png");
+	background-repeat: no-repeat;
+	background-size: 90%;
+	background-position: center center;
+}
+p.chaptitle{
+	color: #000;
+	letter-spacing: 3px;
+	font-size: 30px;
+	margin-bottom: 50px;
+}
+.chaptitle span{
+	border-bottom: solid 2px pink;
+}
+.words p{
+	font-size: 20px;
+	line-height: 2;
+	font-family: "游ゴシック","ヒラギノ角ゴ ProN W3"; 
+}
+#profile{
+	padding-top: 110px;
+	width: 100%;
+	background-color: #f0f8ff;
+}
+#profile .text:not(.fadein){
+	opacity: 0;
+	transform: translateY(20px);
+}
+#profile .text.fadein{
+	animation-name: fadein;
+	animation-duration: 2s;
+}
+#profile #logo-profile{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	border: solid 5px #fff;
+	background-image: url("./images/profilelogo.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100%;
+}
+#skills ul{
+	list-style: none;
+	width: 100%;
+	margin: 0 auto;
+	color: #b0c4de
+}
+#skills ul:not(.fadein){
+	opacity: 0;
+	transform: translateY(20px);
+}
+#skills ul.fadein{
+	animation-name: fadein;
+	animation-duration: 2s;
+}
+#skills{
+	padding-top: 110px;
+	width: 100%;
+	background-color: #f0f8ff;
+}
+#skills .square{
+	color: #223a70;
+}
+#skills .icon-zone{
+	width: 100%;
+	text-align: center;
+	margin-top: 10%;
+}
+#skills i{
+	font-size: 5em;
+}
+#skills .name-zone{
+	font-size: 1.5em;
+	text-align: center;
+	margin-top: 3%;
+}
+#skills .separatebar{
+	width: 80%;
+	background-color: #000;
+	height: 3px;
+	margin: 10px auto;
+}
+#skills .description{
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 100%;
+	font-family: "游ゴシック","ヒラギノ角ゴ ProN W3";
+}
+#works .words:not(.fadein){
+	opacity: 0;
+	transform: translateY(20px);
+}
+#works .words.fadein{
+	animation-name: fadein;
+	animation-duration: 2s;
+}
+#works{
+	padding-top: 110px;
+	width: 100%;
+	background-color: #f0f8ff;
+	padding-bottom: 300px;
+}
+
+@media screen and (min-width:781px){
+	#menubar #menu-wrapper{
+		overflow: hidden;
+		list-style: none;
+		margin-right: 50px;
+	}
+	#menu-wrapper li{
+		float: left;
+		width: 100px;
+		height: 45px;
+		line-height: 45px;
+		margin-right: 30px;
+		text-align: center;
+	}
+	#menu-wrapper a{
+		color: #fff;
+		display: block;
+		text-decoration: none;
+		position: relative;
+	}
+	#menubar #menu-trigger-wrapper{
+		display: none;
+	}
+	#menu-wrapper a::after{
+		position: absolute;
+		display: block;
+		height: 2px;
+		bottom: 0;
+		content: "";
+		left: 0;
+		transition: all 0.3s;
+		width: 100%;
+		background-color: #fff;
+		transform: scale(0,1);
+		transform-origin: left top;
+	}
+	#menu-wrapper a:hover::after{
+		transform: scale(1,1);
+		transform-origin: right; top;
+	}
+	.text{
+		display: flex;
+		height: 300px;
+		align-items: center;
+	}
+	p.chaptitle{
+		padding-left: 50px;
+	}
+	#profile #logo-profile{
+		margin: 30px 0 30px 50px;
+	}
+	#profile .words{
+		margin-left: 50px;
+		flex: 1;
+		height: 200px;
+	}
+	#profile .words p{
+	}
+	#skills ul{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	#skills li{
+		margin: 3%;
+		width: 25%;
+		border-radius: 10%;
+		border: 5px outset #797979;
+		background-color: #fff;
+		max-height: 350px;
+	}
+	.square{
+		width: 100%;
+		height: 0;
+		padding-bottom: 150%;
+	}
+	#works .words{
+		padding-left: 50px;
+	}
+}
+@media screen and (max-width:781px){
+	#menubar #menu-wrapper:not(.active){
+		display: none;
+	}
+	#menubar #menu-trigger-wrapper{
+		overflow: hidden;
+		margin-left: 10px;
+		margin-right: 50px;
+		height: 30px;
+	}
+	#menu-trigger{
+		position: relative;
+		width: 40px;
+		height: 30px;
+	}
+	#menu-trigger, #menu-trigger span{
+		display: inline-block;
+		transition: all 0.3s;
+		box-sizing: border-box;
+	}
+	#menu-trigger span{
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 4px;
+		background-color: #fff;
+		border-radius: 4px;
+	}
+	#menu-trigger span:nth-of-type(1){
+		top: 0;
+	}
+	#menu-trigger span:nth-of-type(2){
+		top: 13px;
+	}
+	#menu-trigger span:nth-of-type(3){
+		bottom: 0;
+	}
+	#menu-trigger:not(.active):hover span:nth-of-type(1){
+		top: 4px;
+	}
+	#menu-trigger:not(.active):hover span:nth-of-type(3){
+		bottom: 4px;
+	}
+	#menu-trigger.active span:nth-of-type(1){
+		-webkit-transform: translateY(13px) rotate(-45deg);
+		transform: translateY(13px) rotate(-45deg);
+	}
+	#menu-trigger.active span:nth-of-type(2){
+		opacity: 0;
+	}
+	#menu-trigger.active span:nth-of-type(3){
+		-webkit-transform: translateY(-13px) rotate(45deg);
+		transform: translateY(-13px) rotate(45deg);
+	}
+	#menu-trigger.active:hover span:nth-of-type(1){
+		-webkit-transform: translateY(13px) rotate(-35deg);
+		transform: translateY(13px) rotate(-35deg);
+	}
+	#menu-trigger.active:hover span:nth-of-type(3){
+		-webkit-transform: translateY(-13px) rotate(35deg);
+		transform: translateY(-13px) rotate(35deg);
+	}
+	#forsmmenubar.active{
+		transform: scale(1,1);
+	}
+	#forsmmenubar.active li:hover{
+		background-color: rgba(255,255,255,0.4);
+	}
+	p.chaptitle{
+		text-align: center;
+	}
+	.text{
+		width: 100%;
+	}
+	#profile #logo-profile{
+		margin: 0 auto;
+		margin-bottom: 50px;
+	}
+	#skills li{
+		margin: 5% auto;
+		width: 80%;
+		border-radius: 10%;
+		border: 5px outset #797979;
+		background-color: #fff;
+	}
+	#skills li:last-child{
+		margin-bottom: 0;
+	}
+	#skills .icon-zone{
+		margin-top: 5%;
+	}
+	.square{
+		width: 100%;
+		height: 0;
+		padding-bottom: 60%;
+	}
+	.words{
+		margin: 0 auto;
+		width: 80%;
+	}
+}
+
+@keyframes fadein{
+	from{
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
